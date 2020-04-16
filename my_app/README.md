@@ -1,16 +1,23 @@
-# my_app
+#Lilia_Home 
 
-A new Flutter project.
+A smart home assistant 
 
-## Getting Started
+The code is divided into 3 main parts : 
 
-This project is a starting point for a Flutter application.
+The Cross platform Mobile App written in Flutter : user just needs to open the project in android studio or any other text editor or IDE to modify the code , downloads the flutter packages by just typing flutter pub get and he will be able to run the App on android or iOS phone . 
 
-A few resources to get you started if this is your first Flutter project:
+The Raspberry Pi code which is composed of 2 parts : 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- The web server (Written in python Flask) that will work mainely as an API between flutter and the raspberry pi 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- A program written in C that handles the commands recieved from the App and returns the respons in a text file to be parsed by the server.
+
+-features : Lilia is a family oriented Assistant which deals with one admin as the father/mother who can add members and assign tasks to each of the members. 
+
+other memebers with eeach one his room(lights doors) 
+
+it containes a chatting bot for family members discussions (one to one or groups) 
+
+Security route for live camera streaming(not done yet) 
+
+Lilia : Because Family comes First :) 
