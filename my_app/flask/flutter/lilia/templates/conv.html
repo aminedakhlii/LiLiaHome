@@ -1,0 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+
+<div id="messages">
+{% for message in messages %}
+<p>{{ message.sender_id }}</p>
+<p>{{message.message}}</p>
+{% endfor %}
+</div>
+
+
+
+<script type"text/javascript" >
+function send_message(message , current_user ,partner){
+$.ajax({
+  type:'POST',
+  url:'/send_message',
+  data: {'message' : message ,
+          'current_user' : current_user,
+          'partner' : partner
+      },
+  dataType : 'json',
+  success : function(data){
+    const html = data.map(function(message) {
+      return `<p>${message.sender}</p>
+      <p>${message.message}</p>`
+    }).join('');
+    const conversation = document.querySelector('.messages');
+    messages.innerHTML = html ;
+    messages.scrollTop = messages.scrollHeight ;
+  }
+});
+}
+
+ </script>
+<script type="text/javascript">
+   setInterval(send_message , 1000 , 'voidmessagevoidmessagevoidmessage' , {{me}} , {{partner}} );
+</script>
